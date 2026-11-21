@@ -1,0 +1,24 @@
+
+"use strict";
+
+const CONFIG = {
+  WIDTH: 800,
+  HEIGHT: 500,
+
+  PLAYER_SPEED: 5,
+  PLAYER_RADIUS: 15,
+
+  ENEMY_SPEED: 2,
+  ENEMY_RADIUS: 15,
+
+  SPAWN_INTERVAL: 1000,
+  MAX_DELTA: 50,
+
+  COLORS: {
+    PLAYER: "#ff3030",
+    ENEMY: "#ff2020",
+    BACKGROUND: "#080808"
+  }
+};
+
+console.log("CART3RHN CONFIG LOADED");

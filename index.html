@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>CART3RHN</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>CART3RHN</h1>
+    <p>NEON SURVIVAL PROTOCOL</p>
+  </header>
+
+  <main class="container">
+
+    <section class="game-panel">
+
+      <div class="stats">
+        <div>
+          SCORE: <span id="score">0</span>
+        </div>
+
+        <div>
+          LEVEL: <span id="level">1</span>
+        </div>
+      </div>
+
+      <canvas
+        id="gameCanvas"
+        width="800"
+        height="500">
+      </canvas>
+
+      <p id="message">READY TO PLAY?</p>
+
+      <button id="startButton">
+        START GAME
+      </button>
+
+      <p class="instructions">
+        Use WASD or arrow keys to move.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- GAME MODULES -->
+
+  <script src="src/config.js"></script>
+  <script src="src/input.js"></script>
+  <script src="src/player.js"></script>
+  <script src="src/enemy.js"></script>
+  <script src="src/game.js"></script>
+  <script src="src/main.js"></script>
+
+</body>
+</html>
