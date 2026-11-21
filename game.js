@@ -16,7 +16,6 @@ class Game {
     this.enemies = [];
     this.score = 0;
     this.level = 1;
-
     this.running = false;
     this.lastTime = 0;
     this.spawnTimer = 0;
@@ -33,15 +32,13 @@ class Game {
     this.lastTime = 0;
     this.running = true;
 
-    document.getElementById("message").textContent =
-      "SURVIVE!";
+    document.getElementById("message").textContent = "SURVIVE!";
 
     requestAnimationFrame((t) => this.loop(t));
   }
 
   update(delta) {
     this.player.update(this.input, delta);
-
     this.spawnTimer += delta;
 
     const interval = Math.max(
@@ -68,30 +65,24 @@ class Game {
       }
     }
 
-    this.enemies = this.enemies.filter(enemy => {
+    this.enemies = this.enemies.filter((enemy) => {
       if (enemy.y > CONFIG.HEIGHT + 20) {
         this.score += 10;
         return false;
       }
-
       return true;
     });
 
     this.level = Math.floor(this.score / 100) + 1;
 
-    document.getElementById("score").textContent =
-      this.score;
-
-    document.getElementById("level").textContent =
-      this.level;
+    document.getElementById("score").textContent = this.score;
+    document.getElementById("level").textContent = this.level;
   }
 
   draw() {
     const ctx = this.ctx;
 
-    ctx.clearRect(
-      0, 0, CONFIG.WIDTH, CONFIG.HEIGHT
-    );
+    ctx.clearRect(0, 0, CONFIG.WIDTH, CONFIG.HEIGHT);
 
     ctx.fillStyle = "#555";
 
@@ -99,7 +90,8 @@ class Game {
       ctx.fillRect(
         (i * 137) % CONFIG.WIDTH,
         (i * 79) % CONFIG.HEIGHT,
-        2, 2
+        2,
+        2
       );
     }
 
@@ -126,7 +118,6 @@ class Game {
       if (this.running) {
         requestAnimationFrame((t) => this.loop(t));
       }
-
     } catch (error) {
       console.error("Game error:", error);
       this.end("SYSTEM ERROR");
